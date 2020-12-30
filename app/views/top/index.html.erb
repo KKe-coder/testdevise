@@ -1,0 +1,20 @@
+<h1>Hello!
+    <% if customer_signed_in? %>
+      <%= current_customer.name %>
+    <% elsif admin_signed_in? %>
+      <%= current_admin.name %>
+    <% else %>
+
+    <% end %>
+  !!!</h1>
+
+<h3>
+  <% if customer_signed_in? %>
+    <%= link_to 'customerマイページ', customer_path(current_customer.id) %>
+  <% elsif admin_signed_in? %>
+    <%= link_to 'adminマイページ', admin_path(current_admin.id) %>
+  <% else %>
+  <% end %>
+</h3>
+
+<h3>Current URL:<%= @url %></h3>
